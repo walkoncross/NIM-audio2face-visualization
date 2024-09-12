@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Face Animation</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        /* #inputsDiv { position: absolute; top: 10px; right: 10px; z-index: 10; } */
+        #inputSectionHeader { font-weight: bold; font-size: 1.2em;}
+        #controls { position: absolute; top: 10px; left: 10px; z-index: 10; }
+        #audioPlayer { margin-top: 10px; display: none; }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div id="inputsDiv">
+            <span id="inputSectionHeader">3D Asset:</span>
+            <label for="default3DAsset">Load Default:</label>            
+            <select id="default3DAsset">
+                <option value="">Select an 3D asset</option>
+                <option value="assets/mark_mid_v5.glb">Mark</option>
+                <option value="assets/claire_mid_v5.glb">Claire</option>
+            </select>
+
+            <span> OR </span>
+
+            <label for="glbInput">Upload .glb:</label>
+            <input type="file" id="glbInput" accept=".glb">
+        </div>
+        
+        <div id="inputsDiv">
+            <span id="inputSectionHeader">Animation Data:</span>     
+    
+            Load Default:
+            <button id="loadDefautAnimData">LoadDefault</button>
+
+            OR Upload:
+
+            <br/>
+
+            <label for="csvInput">Animation Data (.csv):</label>
+            <input type="file" id="csvInput" accept=".csv">
+
+            <label for="audioInput">Audio File:</label>
+            <input type="file" id="audioInput" accept="audio/*">
+        </div>
+
+        <div id="inputsDiv">
+            <span id="inputSectionHeader">Render:</span>
+
+            <button id="runButton">Run</button> 
+            <label><input type="checkbox" id="loopCheckbox"> Loop</label>
+
+            <br/>
+        </div> 
+
+        <audio id="audioPlayer" controls>
+            <source src="assets/out.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
